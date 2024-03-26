@@ -22,8 +22,3 @@ mv:
 	mkdir ${a};mv *.c ${a};mv *.h ${a}; cp makefile ${a};
 	cp ${a}/l.c .; cp ${a}/l.h .; mv ${a} rsc;clear;ls rsc;ls rsc/${a}
 	touch c.c
-git:
-	clear;echo "\033[1;91mTASK STARTED: GIT\033[0;0m\n";git add --all;git commit -am "${a}";git push;git log --oneline;echo "\n\033[1;91mFINISHED TASK: GIT\033[0;0m\n"
-
-log:
-	clear;echo "\033[1;91mTASK STARTED: LOG\033[0;0m\n";git log --oneline;echo "\n\033[1;91mTASK FINISHED: LOG\033[0;0m\n\n"

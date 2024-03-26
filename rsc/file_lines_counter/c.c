@@ -6,8 +6,6 @@
 
 
 int is_code_file(const char *filename) {
-    setlocale(LC_NUMERIC, "");
-    
     const char *extensions[] = {".c", ".cpp", ".h", ".hpp", ".java", ".py", ".html", ".css",
                                 ".js", ".php", ".rb", ".swift", ".go", ".pl", ".lua", ".sh",
                                 ".sql", ".asm", ".r", ".cs", ".dart", ".scala", ".kt", ".ts",
@@ -19,31 +17,28 @@ int is_code_file(const char *filename) {
                                 ".gradle", ".scss", ".sass", ".vue", ".graphql", ".feature", ".re",
                                 ".rei", ".vba", ".applescript", ".cirru", ".less", ".styl", ".rss",
                                 ".atom", ".xsd", ".wsdl", ".raml", ".plist", ".pod", ".ods", ".odt",
-                                ".xlsx", ".xls", ".csv", ".tsv", ".conf", ".cfg", ".yml",
+                                ".xlsx", ".xls", ".tsv", ".conf", ".cfg", ".yml",
                                 ".yaml", ".xml", ".xsl", ".xsd", ".raml", ".plist", ".pbxproj",
                                 ".entitlements", ".metal", ".metallib", ".glsl", ".hlsl", ".shader",
                                 ".md", ".markdown", ".rst", ".adoc", ".ad", ".asciidoc", ".me", ".db",
                                 ".sqlite", ".sqlite3", ".sdf", ".tsv", ".ini", ".conf", ".cfg", ".manifest",
                                 ".xml", ".dtd", ".xsl", ".xslt", ".plist", ".yaml", ".yml",
                                 ".edn", ".lisp", ".el", ".cl", ".scm", ".ss", ".rkt", ".tcl", ".rs",
-                                ".rsh", ".r", ".R", ".Rmd", ".Rnw", ".Rhtml", ".htm", ".shtml",
-                                ".xhtml", ".md", ".markdown", ".markdown", ".creole", ".wiki", ".org",
-                                ".pod", ".pl", ".pm", ".t", ".pod", ".sh", ".zsh", ".apk", ".ipa",
-                                ".xap", ".xamlx", ".swf", ".xap", ".dll", ".so", ".dylib", ".ear",
-                                ".jar", ".war", ".aif", ".m3u", ".mid", ".mp3", ".mpa", ".ra", ".wav",
-                                ".wma", ".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", ".m4v", ".mov",
-                                ".mp4", ".mpg", ".rm", ".srt", ".swf", ".vob", ".wmv"};
-
+                                ".rsh", ".r", ".R", ".Rhtml", ".htm", ".shtml",
+                                ".xhtml", ".md", ".markdown", ".sh", ".py"};
     const int num_extensions = sizeof(extensions) / sizeof(extensions[0]);
 
-    for (int i = 0; i < num_extensions; ++i) {
-        if (strstr(filename, extensions[i]) != NULL) {
-            return 1;
+    const char *file_extension = strrchr(filename, '.');
+    if (file_extension != NULL) {
+        for (int i = 0; i < num_extensions; ++i) {
+            if (strcmp(file_extension, extensions[i]) == 0) {
+                return 1;
+            }
         }
     }
-
     return 0;
 }
+
 
 int count_lines(const char *filename) {
     FILE *file = fopen(filename, "r");
@@ -79,6 +74,9 @@ void count_lines_in_folder(const char *folder_path, int *total_lines) {
     }
 }
 int main() {
+
+    setlocale(LC_NUMERIC, "");
+    
     int total_lines = 0;
     count_lines_in_folder(".", &total_lines);
 
