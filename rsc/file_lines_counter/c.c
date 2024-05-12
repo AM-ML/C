@@ -7,23 +7,9 @@
 
 int is_code_file(const char *filename) {
     const char *extensions[] = {".c", ".cpp", ".h", ".hpp", ".java", ".py", ".html", ".css",
-                                ".js", ".php", ".rb", ".swift", ".go", ".pl", ".lua", ".sh",
-                                ".sql", ".asm", ".r", ".cs", ".dart", ".scala", ".kt", ".ts",
-                                ".rs", ".groovy", ".jl", ".clj", ".cljs", ".coffee", ".cr",
-                                ".d", ".fs", ".v", ".vhdl", ".tcl", ".f90", ".f95", ".f03",
-                                ".f08", ".m", ".mm", ".pas", ".scm", ".t", ".xml", ".yml",
-                                ".yaml", ".ini", ".cfg", ".md", ".rst", ".tex", ".bat",
-                                ".pl", ".raku", ".erl", ".ex", ".exs", ".lfe", ".conf", ".properties",
-                                ".gradle", ".scss", ".sass", ".vue", ".graphql", ".feature", ".re",
-                                ".rei", ".vba", ".applescript", ".cirru", ".less", ".styl", ".rss",
-                                ".atom", ".xsd", ".wsdl", ".raml", ".plist", ".pod", ".ods", ".odt",
-                                ".xlsx", ".xls", ".tsv", ".conf", ".cfg", ".yml",
-                                ".yaml", ".xml", ".xsl", ".xsd", ".raml", ".plist", ".pbxproj",
-                                ".entitlements", ".metal", ".metallib", ".glsl", ".hlsl", ".shader",
-                                ".md", ".markdown", ".rst", ".adoc", ".ad", ".asciidoc", ".me", ".db",
-                                ".sqlite", ".sqlite3", ".sdf", ".tsv", ".ini", ".conf", ".cfg", ".manifest",
-                                ".xml", ".dtd", ".xsl", ".xslt", ".plist", ".yaml", ".yml",
-                                ".edn", ".lisp", ".el", ".cl", ".scm", ".ss", ".rkt", ".tcl", ".rs",
+                                ".js", ".php", ".rb", ".swift", ".go", ".lua", ".sh",
+                                ".asm", ".r", ".cs", ".dart", ".scala", ".kt", ".ts",
+                                ".rs", ".groovy", ".ini", ".md", ".rst", ".bat",
                                 ".rsh", ".r", ".R", ".Rhtml", ".htm", ".shtml",
                                 ".xhtml", ".md", ".markdown", ".sh", ".py"};
     const int num_extensions = sizeof(extensions) / sizeof(extensions[0]);
