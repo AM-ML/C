@@ -20,7 +20,7 @@ int main(void)
 	int (*p)[cols] = &a[0];
 
 	display(a);
-	
+
 	printf("\n");
 	print_line();
 	print_line();
@@ -37,7 +37,7 @@ void display(int a[rows][cols])
 	for(int i = 0; i < cols; i++)
 	{
 		if(i+1 == cols)
-		{			
+		{
 			printf("%d", i);
 			continue;
 		}
@@ -49,9 +49,9 @@ void display(int a[rows][cols])
 
 	for(int i = 0; i < rows;i++)
 		for(int j = 0; j < cols;j++)
-		{			
+		{
 			if((j+1) % cols == 0)
-			{				
+			{
 				printf("%d\n", a[i][j]);
 				continue;
 			}
