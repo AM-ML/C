@@ -25,6 +25,6 @@ int read_line(char str[], int n)
 	while((c = getchar()) != '\n') // getchar: returns ASCII of char hence: int c
 		if(i < n) // NO ERROR HANDLING (INCASE OF I >= N) HENCE STACK COULD STOP PROGRAM
 			str[i++] = c;
-	str[i] = '\n'; // terminates str & truncates excess chars if exist
+	str[i] = '\0'; // terminates str & truncates excess chars if exist
 	return i;
 }
