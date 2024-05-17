@@ -1,5 +1,5 @@
 default_linux:
-	clear;rm c -rf
+	clear
 	@start=`date +%s%N`; \
 	gcc c.c -o c; \
 	end=`date +%s%N`; \

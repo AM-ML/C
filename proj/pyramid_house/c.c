@@ -24,7 +24,7 @@ void sqr(int n)
 	for(int i = 0; i < n-1; i++)
 	{
 		for(int j = 0; j < n; j++)
-			printf("##");
+			printf("\033[0;33m##\033[0;0m");
 		printf("\n");
 	}
 }
@@ -48,7 +48,7 @@ void pyr(int n)
 		for(int k = 0; k < s; k++)
 			printf(" ");
 		for(int k = 0; k < i; k++)
-			printf("##");
+			printf("\033[0;31m##\033[0;0m");
 		printf("\n");
 		i++;s--;
 	}
