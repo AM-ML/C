@@ -1,7 +1,7 @@
 default_linux:
 	clear;rm c -rf
 	@start=`date +%s%N`; \
-	gcc c.c -o c; \
+	gcc c.c lib.c -o c; \
 	end=`date +%s%N`; \
 	runtime=`expr $$end - $$start`; \
 	runtime_ms=`expr $$runtime / 1000000`; \
@@ -18,10 +18,10 @@ r:
 	clear;./c
 
 mv:
-	mkdir ${a};mv *.c ${a};mv c ${a};cp makefile ${a};touch c.c;mv ${a} rsc;clear;
+	mkdir ${a};mv *.c ${a};mv c ${a};mv *.h ${a};cp ${a}/lib.* .;cp makefile ${a};touch c.c;mv ${a} rsc;clear;
 
 proj_mv:
-	mkdir ${a};mv *.c ${a};mv c ${a};cp makefile ${a};touch c.c;mv ${a} proj;clear;ls proj/${a}
+	mkdir ${a};mv *.c ${a};cp *.h ${a};cp ${a}/lib.* .;mv c ${a};cp makefile ${a};touch c.c;mv ${a} proj;clear;ls proj/${a}
 
 update_c:
 	cp c /media/bruno/Jupyter/wpsf/ -rf
@@ -35,9 +35,16 @@ update_workspace:
 	cp /media/bruno/Jupyter/Media/Books /media/bruno/King/Media/ -rf
 
 git:
-	clear;echo "\033[1;91mTASK STARTED: GIT\033[0;0m\n";git add --all;git commit -am "${a}";git push;git log --oneline;echo "\n\033[1;91mFINISHED TASK: GIT\033[0;0m\n"
+	clear;echo "\033[1;91mTASK STARTED: GIT\033[0;0m\n";git add --all;git commit -am "#${a}";git push;git log --oneline;echo "\n\033[1;91mFINISHED TASK: GIT\033[0;0m\n"
 
 log:
 	clear;echo "\033[1;91mTASK STARTED: LOG\033[0;0m\n";git log --oneline;echo "\n\033[1;91mTASK FINISHED: LOG\033[0;0m\n\n"
+
+gmk:
+	clear;git add makefile;git commit -m "#${a}: makefile refactoring.";git push;git log --oneline
+
+glib:
+	clear;git add lib.c lib.h;git commit -m "#${a}"; git push;git log --oneline
+
 status:
 	clear;git status
