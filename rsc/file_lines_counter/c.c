@@ -6,12 +6,17 @@
 
 
 int is_code_file(const char *filename) {
-    const char *extensions[] = {".c", ".cpp", ".h", ".hpp", ".java", ".py", ".html", ".css",
-                                ".js", ".php", ".rb", ".swift", ".go", ".lua", ".sh",
-                                ".asm", ".r", ".cs", ".dart", ".scala", ".kt", ".ts",
-                                ".rs", ".groovy", ".ini", ".md", ".rst", ".bat",
-                                ".rsh", ".r", ".R", ".Rhtml", ".htm", ".shtml",
-                                ".xhtml", ".md", ".markdown", ".sh", ".py"};
+    const char *extensions[] = {".c", ".C", ".cpp", ".CPP", ".h", ".H", ".hpp", ".HPP",
+				 ".java", ".JAVA", ".py", ".PY",".html", ".HTML", ".css",
+                                ".js", ".JS", ".CSS", ".php",".PHP", ".rb", ".RB",".swift",
+				 ".SWIFT", ".go", ".GO",".lua", ".LUA", ".sh", ".SH",
+                                ".asm", ".ASM",".r", ".R", ".cs", ".CS",".dart", ".DART"
+				 ".scala", ".SCALA", ".kt", ".KT", ".ts", ".TS",
+                                ".rs", ".RS", ".groovy", ".GROOVY", ".ini", ".INI",
+				".md", ".MD", ".rst", ".RST", ".bat", ".BAT",
+                                ".rsh", ".RSH", ".Rhtml", ".RHTML",".htm", ".HTM", ".shtml",
+				".SHTML",".xhtml", ".XHTML",".md", ".MD",".markdown", ".MARKDOWN",
+				};
     const int num_extensions = sizeof(extensions) / sizeof(extensions[0]);
 
     const char *file_extension = strrchr(filename, '.');
@@ -81,7 +86,7 @@ int main() {
     printf("  |  _ \\| |          | |    \n");
     printf("  | |_) | | __ _  ___| | __ \n");
     printf("  |  _ <| |/ _` |/ __| |/ / \n");
-    printf("  | |_) | | \033[6;92m%'d\033[0;90m\033[1;91m | (__|   <  \n", total_lines);
+    printf("  | |_) | | \033[1;92m%'d\033[1;90m\033[1;91m | (__|   <  \n", total_lines);
     printf("  |____/|_|\\__,_|\\___|_|\\_\\ \n");
     printf("                            \n\033[1;93m");
     for(int i =0 ; i<30;i++)
