@@ -47,7 +47,7 @@ glib:
 	clear;git add lib.c lib.h;git commit -m "${a}"; git push;git log --oneline
 
 glib_refactoring:
-	clear;git add lib.c lib.h.; git commit -m "Lib.c library refactoring.";git push; git log --oneline
+	clear;git add lib.c lib.h; git commit -m "Lib.c library refactoring.";git push; git log --oneline
 
 status:
 	clear;git status
