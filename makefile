@@ -41,10 +41,10 @@ log:
 	clear;echo "\033[1;91mTASK STARTED: LOG\033[0;0m\n";git log --oneline;echo "\n\033[1;91mTASK FINISHED: LOG\033[0;0m\n\n"
 
 gmk:
-	clear;git add makefile;git commit -m "#${a}: makefile refactoring.";git push;git log --oneline
+	clear;git add makefile;git commit -m "makefile refactoring.";git push;git log --oneline
 
 glib:
-	clear;git add lib.c lib.h;git commit -m "#${a}"; git push;git log --oneline
+	clear;git add lib.c lib.h;git commit -m "${a}"; git push;git log --oneline
 
 status:
 	clear;git status
