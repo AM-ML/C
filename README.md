@@ -2,12 +2,13 @@
 
 
 # Layout
-The general structuring of each folder in rsc/ and proj/ goes like this:
-  ## My Custom Library:
-    The lib.c and lib.c files contain my custom functions that I use frequently in each program.
+ &nbsp;  &nbsp; The general structuring of each folder in rsc/ and proj/ goes like this
+  ## &nbsp; My Custom Library
+  <p> &nbsp;  &nbsp; &nbsp; The <code>lib.c</code> and <code>lib.h</code> files contain my custom functions that I use frequently in each program.</p>
     
-  ## Main Source File
-    The c.c program file that contains all the main code aside from function provided by my custom library.
+  ## &nbsp; Main Source File
+  <p> &nbsp;  &nbsp; &nbsp; The <code>c.c</code> program file that contains all the main code aside from function provided by my custom library.</p>
 
-  ## Makefile
-    The 'makefile' file is the main tool that I use to run my code and handle git, it runs multiple custom commands just by calling make executable in the command-line.
+  ## &nbsp; Makefile
+  <p> &nbsp;  &nbsp; &nbsp; The <code>Makefile</code> file is the main tool that I use to run my code and handle git. 
+  <br/>&nbsp; &nbsp; &nbsp; It runs multiple custom commands just by calling make executable in the command-line.</p>
