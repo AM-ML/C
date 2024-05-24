@@ -7,3 +7,5 @@
 int read_line(char str[], int n);
 int get_random_int(int lower_range, int upper_range);
 char* strLower(const char *str);
+char* strUpper(const char *str);
+char *capitalize(const char *str);

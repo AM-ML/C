@@ -33,13 +33,13 @@ int main(int argc, char *argv[]) {
 
 	Person p1, p2, p3;
 
-	p1.name = "A";
-	p2.name = "B";
+	p1.name = "John";
+	p2.name = "Jane";
 
-	p1.phone = "123-321";
-	p2.phone = "456-789";
+	p1.phone = "123-321-1234";
+	p2.phone = "456-789-938";
 
-	p3 = newPerson("C", "879-424-396");
+	p3 = newPerson("David", "879-424-3946");
 
 	Person* phonebook[100];
 
@@ -49,23 +49,32 @@ int main(int argc, char *argv[]) {
 
 	char target[50];
 
-	printf("\033[1;96mEnter Name: \033[1;92m");
-	read_line(target, 50);
+	for(;;)
+	{
+		printf("\033[1;96mEnter Name: \033[1;92m");
+		read_line(target, 50);
 
-	LS returned = linear_search(phonebook, target, index);
+		if(strcmp(strLower(target), "exit") == 0)
+		{
+			printf("\033[1;92mGoodbye!\033[0;0m\n\n");
+			break;
+		}
 
-	if(returned.result == -1) {
-		printf("\033[1;91mNot Found.\033[0;0m\n");
-	} else {
-		printf("\033[1;96mPhone: \033[1;92m%s\n\033[0;0m", returned.phone);
+		LS returned = linear_search(phonebook, target, index);
+
+		if(returned.result == -1) {
+			printf("\033[1;91mNot Found.\033[0;0m\n\n");
+		} else {
+			printf("\033[1;96m%s: \033[1;92m%s.\n\n\033[0;0m", capitalize(target), returned.phone);
+		}
+
+		// Free allocated memory
+		free(returned.phone);
 	}
 
-	// Free allocated memory
 	for (int i = 0; i < index; i++) {
 		free(phonebook[i]);
 	}
-	free(returned.phone);
-
 	return 0;
 }
 
