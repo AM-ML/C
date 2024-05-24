@@ -55,3 +55,15 @@ char* strUpper(const char *str)
 
 	return s;
 }
+
+char *capitalize(const char *str)
+{
+	char *s = malloc(strlen(str) + 1);
+
+	strcpy(s, str);
+
+	if(s[0] > 96)
+		s[0] -= 32;
+
+	return s;
+}
