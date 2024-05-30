@@ -2,29 +2,30 @@
 
 int read_line(char str[], int n)
 {
-	char c, *s = str;
+	char *s = str;
+	int c;
 
 	while((c = getchar()) != '\n')
 	{
 		if(s-str < n)
-			*s++ = c;
+			*s++ = (char) c;
 	}
 	*s = '\0';
 
-	return s-str;
+	return (int) (s-str);
 }
 
 int get_random_int(int lower_range, int upper_range)
 {
 	srandom((unsigned int) time(NULL));
 
-	return random() % upper_range+1 + lower_range; // returns random int in range of a -> b
+	return (int) (random() % upper_range+1 + lower_range); // returns random int in range of a -> b
 }
 
 
 char* strLower(const char *str)
 {
-	int len = strlen(str);
+	size_t len = strlen(str);
 	char *s = malloc(len+1);
 
 	if(s == NULL)
@@ -41,7 +42,7 @@ char* strLower(const char *str)
 
 char* strUpper(const char *str)
 {
-	int len = strlen(str);
+	size_t len = strlen(str);
 	char *s = malloc(len+1);
 
 	if(s == NULL)
@@ -66,4 +67,25 @@ char *capitalize(const char *str)
 		s[0] -= 32;
 
 	return s;
+}
+
+void cyan()
+{
+	printf("\033[1;96m");
+}
+void green()
+{
+	printf("\033[1;92m");
+}
+void red()
+{
+	printf("\033[1;91m");
+}
+void yellow()
+{
+	printf("\033[1;93m");
+}
+void reset()
+{
+	printf("\033[0;0m");
 }
