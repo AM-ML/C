@@ -1,7 +1,11 @@
+gcc_warning_flags = -Wunused-variable -Wshadow -Wconversion -Wuninitialized -Wfloat-equal
+gcc_optimization_flags = -O3 -march=native -mtune=native -funroll-loops -finline-functions -fomit-frame-pointer -fprefetch-loop-arrays -ffast-math
+normal_gcc = gcc $(gcc_warning_flags) $(gcc_optimization_flags) c.c -o c
+
 default_linux:
 	clear;rm c -rf
 	@start=`date +%s%N`; \
-	gcc c.c lib.c -o c; \
+	${normal_gcc} lib.c; \
 	end=`date +%s%N`; \
 	runtime=`expr $$end - $$start`; \
 	runtime_ms=`expr $$runtime / 1000000`; \
