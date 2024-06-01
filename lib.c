@@ -69,6 +69,17 @@ char *capitalize(const char *str)
 	return s;
 }
 
+size_t Max_String_Length(char *strings[], size_t size) {
+    size_t maxLength = 0;
+    for (int i = 0; i < size; i++) {
+        size_t length = strlen(strings[i]);
+        if (length > maxLength) {
+            maxLength = length;
+        }
+    }
+    return maxLength;
+}
+
 void cyan()
 {
 	printf("\033[1;96m");
