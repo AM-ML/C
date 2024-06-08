@@ -1,4 +1,4 @@
-<img src="https://github.com/AM-ML/C/assets/131138888/d15793d5-2b24-4d3e-a8c0-607ff299cba0" width = "208" height="350"/>
+<img src="https://github.com/AM-ML/C/assets/131138888/d15793d5-2b24-4d3e-a8c0-607ff299cba0" width = "208" height="270"/>
 
 
 # Layout
