@@ -71,3 +71,6 @@ glib_refactoring:
 
 status:
 	clear;git status
+
+merge:
+	clear;git merge origin side; git push;git checkout side;
