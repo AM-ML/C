@@ -84,3 +84,9 @@ status:
 
 merge:
 	clear; git merge origin side; git push; git checkout side;
+
+pull:
+	clear; git pull origin side; git push; git checkout side;
+
+side:
+	git checkout side;
