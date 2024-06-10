@@ -90,3 +90,6 @@ pull:
 
 side:
 	git checkout side;
+
+side_pull:
+	clear;git pull origin main; git push ; git checkout main;
