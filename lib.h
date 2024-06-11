@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-#define RESET "\033[1;93m"
+#define RESET "\033[0;0m"
 #define RED "\033[1;91m"
 #define CYAN "\033[1;96m"
 #define GREEN "\033[1;92m"
