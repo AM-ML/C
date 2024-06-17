@@ -1,9 +1,4 @@
-#include <time.h>
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <stdbool.h>
 
 #define RESET "\033[0;0m"
 #define RED "\033[1;91m"
@@ -18,15 +13,8 @@
 
 typedef char * string;
 
-int read_line(char str[], int n);
-int get_random_int(int lower_range, int upper_range);
-char* strLower(const char *str);
-char* strUpper(const char *str);
-char *capitalize(const char *str);
-size_t Max_String_Length(char *strings[], size_t size);
-
-void cyan();
-void green();
-void red();
-void yellow();
-void reset();
+#define cyan printf("\033[1;96m")
+#define yellow printf("\033[1;93m")
+#define red printf("\033[1;91m")
+#define green printf("\033[1;92m")
+#define reset_color printf("\033[0;0mm")
