@@ -1,11 +1,11 @@
 gcc_warning_flags = -Wunused-variable -Wshadow -Wconversion -Wuninitialized -Wfloat-equal
 gcc_optimization_flags = -O3 -march=native -mtune=native -funroll-loops -finline-functions -fomit-frame-pointer -fprefetch-loop-arrays -ffast-math
-normal_gcc = $(gcc_warning_flags) $(gcc_optimization_flags) c.c -o c
+normal_gcc = gcc $(gcc_warning_flags) $(gcc_optimization_flags) c.c -o c
 
 default_linux:
 	clear; rm -rf c
 	@start=`date +%s%N`; \
-	gcc ${normal_gcc}; \
+	${normal_gcc}; \
 	end=`date +%s%N`; \
 	runtime=$$((end - start)); \
 	runtime_ms=$$((runtime / 1000000)); \
@@ -18,25 +18,6 @@ default_linux:
 	echo "\033[1;96mCompilation: \033[1;93m$${runtime_ms}ms\033[0;0m..."; \
 	echo "\033[1;94m----\033[1;96mRuntime: \033[1;93m$${runtime_ms2}ms\033[0;0m..."; \
 	echo "-------------------------"
-
-
-debug:
-	clear; rm -rf c
-	@start=`date +%s%N`; \
-	gcc -DDEBUG=1 ${normal_gcc}; \
-	end=`date +%s%N`; \
-	runtime=$$((end - start)); \
-	runtime_ms=$$((runtime / 1000000)); \
-	start2=`date +%s%N`; \
-	./c; \
-	end2=`date +%s%N`; \
-	runtime2=$$((end2 - start2)); \
-	runtime_ms2=$$((runtime2 / 1000000)); \
-	echo "-------------------------"; \
-	echo "\033[1;96mCompilation: \033[1;93m$${runtime_ms}ms\033[0;0m..."; \
-	echo "\033[1;94m----\033[1;96mRuntime: \033[1;93m$${runtime_ms2}ms\033[0;0m..."; \
-	echo "-------------------------"
-
 
 r:
 	start2=`date +%s%N`; \
@@ -69,3 +50,6 @@ up_bp:
 
 bp:
 	clear; cp rsc/bp/* .;
+
+gbp:
+	clear;git add rsc/bp; git commit -m "bp refactoring";git push;
