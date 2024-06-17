@@ -1,8 +1,7 @@
 #include "lib.h"
 
-int main(int argc, char *argv[])
-{
-    printf("hello, world!\n");
+int main(int argc, char *argv[]) {
 
-	return 0;
+
+  return 0;
 }
