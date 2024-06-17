@@ -44,3 +44,6 @@ glib:
 
 glib_refactoring:
 	clear; git add lib.h; git commit -m "Lib.h refactoring."; git push; git log --oneline
+
+bp:
+	clear; cp c.c rsc/bp; cp makefile rsc/bp; cp lib.h rsc/bp;
