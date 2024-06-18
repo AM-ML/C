@@ -50,6 +50,3 @@ up_bp:
 
 bp:
 	clear; cp rsc/bp/* .;
-
-gbp:
-	clear;git add rsc/bp; git commit -m "bp refactoring";git push;
