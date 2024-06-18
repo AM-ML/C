@@ -5,7 +5,7 @@ normal_gcc = gcc $(gcc_warning_flags) $(gcc_optimization_flags) c.c -o c
 default_linux:
 	clear; rm -rf c
 	@start=`date +%s%N`; \
-	${normal_gcc} lib.c; \
+	${normal_gcc} buffer.c word.c; \
 	end=`date +%s%N`; \
 	runtime=$$((end - start)); \
 	runtime_ms=$$((runtime / 1000000)); \

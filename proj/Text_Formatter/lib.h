@@ -1,8 +1,5 @@
-#include <time.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <stdbool.h>
 
 #define RESET "\033[0;0m"
@@ -18,15 +15,3 @@
 
 typedef char * string;
 
-int read_line(char str[], int n);
-int get_random_int(int lower_range, int upper_range);
-char* strLower(const char *str);
-char* strUpper(const char *str);
-char *capitalize(const char *str);
-size_t Max_String_Length(char *strings[], size_t size);
-
-void cyan();
-void green();
-void red();
-void yellow();
-void reset();
