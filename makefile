@@ -19,6 +19,23 @@ default_linux:
 	echo "\033[1;94m----\033[1;96mRuntime: \033[1;93m$${runtime_ms2}ms\033[0;0m..."; \
 	echo "-------------------------"
 
+l:
+	clear; rm -rf c
+	@start=`date +%s%N`; \
+	${normal_gcc} ${a}.c; \
+	end=`date +%s%N`; \
+	runtime=$$((end - start)); \
+	runtime_ms=$$((runtime / 1000000)); \
+	start2=`date +%s%N`; \
+	./c; \
+	end2=`date +%s%N`; \
+	runtime2=$$((end2 - start2)); \
+	runtime_ms2=$$((runtime2 / 1000000)); \
+	echo "-------------------------"; \
+	echo "\033[1;96mCompilation: \033[1;93m$${runtime_ms}ms\033[0;0m..."; \
+	echo "\033[1;94m----\033[1;96mRuntime: \033[1;93m$${runtime_ms2}ms\033[0;0m..."; \
+	echo "-------------------------"
+
 r:
 	start2=`date +%s%N`; \
 	clear;./c; \
