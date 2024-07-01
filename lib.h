@@ -7,8 +7,11 @@
 #define YELLOW "\033[1;93m"
 #define BLUE "\033[1;94m"
 
+#define BREAK() putchar('\n')
 #define PRINT_INT(n)                                                           \
   printf("\033[1;92m::: " #n " \033[0;34m= \033[1;96m%d\n\033[0;0m", n)
+#define PRINT_DOUBLE(n)                                                           \
+  printf("\033[1;92m::: " #n " \033[0;34m= \033[1;96m%.2lf\n\033[0;0m", n)
 #define TEST(condition, ...)                                                   \
   ((condition)                                                                 \
        ? printf("\033[1;92mPassed: \033[1;96m%s\033[0;0m\n", #condition)       \
