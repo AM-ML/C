@@ -6,77 +6,15 @@
 
 int is_code_file(const char *filename) {
     const char *extensions[] = {
-        ".c",
-        ".C",
-        ".cpp",
-        ".CPP",
-        ".h",
-        ".H",
-        ".hpp",
-        ".HPP",
-        ".java",
-        ".JAVA",
-        ".py",
-        ".PY",
-        ".html",
-        ".HTML",
-        ".css",
-        ".js",
-        ".JS",
-        ".CSS",
-        ".php",
-        ".PHP",
-        ".rb",
-        ".RB",
-        ".swift",
-        ".SWIFT",
-        ".go",
-        ".GO",
-        ".lua",
-        ".LUA",
-        ".sh",
-        ".SH",
-        ".asm",
-        ".ASM",
-        ".r",
-        ".R",
-        ".cs",
-        ".CS",
-        ".dart",
-        ".DART"
-        ".scala",
-        ".SCALA",
-        ".kt",
-        ".KT",
-        ".ts",
-        ".TS",
-        ".rs",
-        ".RS",
-        ".groovy",
-        ".GROOVY",
-        ".ini",
-        ".INI",
-        ".md",
-        ".MD",
-        ".rst",
-        ".RST",
-        ".bat",
-        ".BAT",
-        ".rsh",
-        ".RSH",
-        ".Rhtml",
-        ".RHTML",
-        ".htm",
-        ".HTM",
-        ".shtml",
-        ".SHTML",
-        ".xhtml",
-        ".XHTML",
-        ".md",
-        ".MD",
-        ".markdown",
-        ".MARKDOWN",
-        ".cc"};
+        ".c", ".C", ".cpp", ".CPP", ".h", ".H", ".hpp", ".HPP", ".java",
+        ".JAVA", ".py", ".PY", ".html", ".HTML", ".css", ".js", ".JS",
+        ".CSS", ".php", ".PHP", ".rb", ".RB", ".swift", ".SWIFT", ".go",
+        ".GO", ".lua", ".LUA", ".sh", ".SH", ".asm", ".ASM", ".r", ".R",
+        ".cs", ".CS", ".dart", ".DART" ".scala", ".SCALA", ".kt", ".KT",
+        ".ts", ".TS", ".rs", ".RS", ".groovy", ".GROOVY", ".ini", ".INI",
+        ".md", ".MD", ".rst", ".RST", ".bat", ".BAT", ".rsh", ".RSH",
+        ".Rhtml", ".RHTML", ".htm", ".HTM", ".shtml", ".SHTML", ".xhtml",
+        ".XHTML", ".md", ".MD", ".markdown", ".MARKDOWN", ".cc"};
     const int num_extensions = sizeof(extensions) / sizeof(extensions[0]);
 
   const char *file_extension = strrchr(filename, '.');
@@ -131,17 +69,6 @@ int main() {
   int total_lines = 0;
   count_lines_in_folder(".", &total_lines);
 
-  // ASCII art representation of the total lines
-  printf("\033[1;93m");
-  for (int i = 0; i < 30; i++) {
-    printf("#");
-  }
-  printf("\n");
-  for (int i = 0; i < 30; i++) {
-    printf("#");
-  }
-  printf("\n");
-
   printf("\033[1;96m   ____  _            _     \n");
   printf("  |  _ \\| |          | |    \n");
   printf("  | |_) | | __ _  ___| | __ \n");
@@ -149,17 +76,7 @@ int main() {
   printf("  | |_) | | \033[1;92m%'d\033[1;90m\033[1;91m | (__|   <  \n",
          total_lines);
   printf("  |____/|_|\\__,_|\\___|_|\\_\\ \n");
-  printf("                            \n\033[1;93m");
-  for (int i = 0; i < 30; i++) {
-    printf("#");
-  }
   printf("\n");
-  for (int i = 0; i < 30; i++) {
-    printf("#");
-  }
-  printf("\n\n");
-
-  // printf("\033[1;96mTotal lines of code: \033[1;92m%d\n\n", total_lines);
 
   return 0;
 }
