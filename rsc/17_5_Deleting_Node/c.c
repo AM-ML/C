@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
   print_nodes(root);
   PRINT_INT(prev -> value);
-  delete_node(root, 3);
+  delete_node(&root, 3);
 
   print_nodes(root);
 
