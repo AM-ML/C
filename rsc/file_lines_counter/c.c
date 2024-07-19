@@ -10,11 +10,12 @@ int is_code_file(const char *filename) {
         ".JAVA", ".py", ".PY", ".html", ".HTML", ".css", ".js", ".JS",
         ".CSS", ".php", ".PHP", ".rb", ".RB", ".swift", ".SWIFT", ".go",
         ".GO", ".lua", ".LUA", ".sh", ".SH", ".asm", ".ASM", ".r", ".R",
-        ".cs", ".CS", ".dart", ".DART" ".scala", ".SCALA", ".kt", ".KT",
+        ".cs", ".CS", ".dart", ".DART", ".scala", ".SCALA", ".kt", ".KT",
         ".ts", ".TS", ".rs", ".RS", ".groovy", ".GROOVY", ".ini", ".INI",
         ".md", ".MD", ".rst", ".RST", ".bat", ".BAT", ".rsh", ".RSH",
         ".Rhtml", ".RHTML", ".htm", ".HTM", ".shtml", ".SHTML", ".xhtml",
-        ".XHTML", ".md", ".MD", ".markdown", ".MARKDOWN", ".cc"};
+        ".XHTML", ".md", ".MD", ".markdown", ".MARKDOWN", ".cc", "makefile",
+        "Makefile", ".hh", ".CC", ".HH"};
     const int num_extensions = sizeof(extensions) / sizeof(extensions[0]);
 
   const char *file_extension = strrchr(filename, '.');
