@@ -14,7 +14,9 @@ int main(void)
 
 	// tri(n);sqr(n);
 
+	printf("\n");
 	pyr(floor(n/2)+1);sqr(floor(n/2)+1);
+	printf("\n");
 
 	return 0;
 }
